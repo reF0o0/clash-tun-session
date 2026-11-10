@@ -9,6 +9,11 @@ description: Manage temporary Clash Verge TUN sessions on macOS for Computer Use
 
 入口：`~/.codex/bin/tun-session`（使用自定义 `CODEX_HOME` 时为该目录的 `bin/tun-session`）。详细命令及限制见 [使用说明](references/usage.md)。脚本操作 Clash 自身开关，不依赖浏览器控制是否连通。
 
+## 浏览器选择
+
+- 实际浏览器控制默认优先 Chrome；用户明确指定浏览器或标签页、已有工作流需要继续时，尊重该选择。Chrome 不可用或任务必须在内置浏览器中完成时，再使用内置浏览器。普通联网搜索和连接器任务仍优先使用相应专用工具。
+- 作者机器 2026-11-11 复测中，临时 TUN 后 Chrome 读取、点击、导航成功，内置浏览器仍超时。此结果只支持默认偏好，不是其他机器的验证证据，也不保证 Chrome 永不超时。仅因选择 Chrome 不开启 TUN，仍按下文使用条件判断。
+
 ## 何时使用
 
 - 先看用户的当前偏好及 `tun-session status`。`mode off` 时禁止自动开启；`mode ask` 需要本次明确同意后才能传 `--approved`。
